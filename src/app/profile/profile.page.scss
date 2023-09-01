@@ -1,0 +1,91 @@
+.content-container {
+  --background: none;
+  padding: 10px;
+}
+
+ion-card {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+ion-item {
+  margin-top: 20px;
+  margin-bottom: 30px; /* Increased margin bottom */
+  padding: 5px;
+}
+
+ion-input {
+  height: 50px;
+  border: 1px solid #383737;
+  width: 100%; /* Adjust as needed */
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.post-button {
+  flex: 1;
+  padding-left: 10px;
+  margin-top: 20px; /* Increased margin top */
+  font-size: 14px;
+}
+
+
+
+.text-highlight {
+  background-color: #ffeeba;
+  padding: 4px;
+
+}
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-group ion-button {
+  font-size: 12px;
+  --padding-start: 4px;
+  --padding-end: 4px;
+}
+
+.author-time-container {
+  display: flex;
+  align-items: center;
+}
+
+.author-text {
+  @import url(http://fonts.googleapis.com/css?family=Great+Vibes);
+    font-family: 'Great Vibes';
+    color: #BF2847;
+    text-align: right;
+    font-size: 18px;
+    font-style: italic; /* Add this line to make the text italic */
+}
+
+
+.time-text {
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: gray;
+}
+
+.footer {
+  --padding-start: 4rem;
+  --padding-end: 4rem;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-button {
+  font-size: 12px;
+  --padding-start: 6px;
+  --padding-end: 6px;
+  width: 48%;
+  margin: 0;
+}

@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button expand="full" (click)="signOut()">
+        <ion-icon slot="start" name="log-out"></ion-icon> ログアウト
+      </ion-button>
+    </ion-buttons>
+    <ion-title>メッセージアプリ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content-container">
+  <ion-item>
+    <ion-input [(ngModel)]="newItem.text" placeholder="メッセージを入力してください"></ion-input>
+    <ion-button (click)="createMessage()" class="post-button">投稿</ion-button>
+  </ion-item>
+
+  <ion-card *ngFor="let item of messages.slice(currentPageIndex, currentPageIndex + 3)">
+    <ion-card-content>
+      <p class="text-highlight">{{ item.payload.doc.data().text }}</p>
+      <div class="info-container">
+        <div class="button-group">
+          <ion-button size="small" (click)="editMessage(item)" class="edit-button">✐ 編集</ion-button>
+          <ion-button
+          size="small"
+          (click)="showBasicAlertDelete(item.payload.doc.id, item.payload.doc.data().author)"
+          color="danger"
+          class="delete-button"
+        >
+          ✕ 削除
+        </ion-button>
+        </div>
+        <div class="author-time-container">
+          <p class="author-text">by {{ item.payload.doc.data().author.split('@')[0] }}</p>
+          <p class="time-text">{{ differenceInHour(item.payload.doc.data().createdTime) }}</p>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
+
+<ion-footer class="footer">
+  <div class="pagination-container">
+    <ion-button [disabled]="messages.length <= 3" (click)="previousPage()" class="pagination-button">前へ</ion-button>
+    <ion-button [disabled]="messages.length <= 3" (click)="nextPage()" class="pagination-button">次へ</ion-button>
+  </div>
+</ion-footer>

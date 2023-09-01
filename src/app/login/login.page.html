@@ -1,0 +1,26 @@
+<!-- Login Page -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ログイン</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="login()">
+    <ion-item>
+      <ion-label position="floating">メールアドレス</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">パスワード</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="full">ログイン</ion-button>
+  </form>
+
+  <p class="ion-text-center">
+    アカウントをお持ちでないですか？ <a routerLink="/signup">新規登録</a>
+  </p>
+</ion-content>
